@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  username: postgres
+  password: password
+
+development:
+  <<: *default
+  database: ng2-cable-example_development
+
+test:
+  <<: *default
+  database: ng2-cable-example_test
+
+production:
+  <<: *default
+  database: ng2-cable-example_production
+  username: <%= ENV['PROJECT_X_DATABASE_USERNAME'] %>
+  password: <%= ENV['PROJECT_X_DATABASE_PASSWORD'] %>
