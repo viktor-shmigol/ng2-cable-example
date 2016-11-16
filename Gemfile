@@ -6,6 +6,8 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'active_model_serializers'
 gem 'decent_exposure', '~> 3.0.0'
+gem 'kaminari'
+gem 'redis'
 
 group :development, :test do
   gem 'pry'

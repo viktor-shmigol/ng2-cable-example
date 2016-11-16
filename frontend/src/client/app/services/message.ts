@@ -6,8 +6,14 @@ export class MessageService {
   constructor(private http: Http) {
   }
 
-  query(page:any, perPage:any) {
-    return this.http.get(`/api/v1/messages?page=${page}&per_page=${perPage}`).map(res => {
+  query(page:any) {
+    return this.http.get(`/api/v1/messages?page=${page}`).map(res => {
+      return res.json();
+    });
+  }
+
+  create(message:any) {
+    return this.http.post('/api/v1/messages', message).map(res => {
       return res.json();
     });
   }

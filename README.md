@@ -9,6 +9,10 @@ Setup
     git clone
     bundle install
     rails db:create db:migrate
+    rails s
+
+    npm install
+    npm start
 
 Demo
 -

@@ -365,6 +365,9 @@ export class SeedConfig {
       'app/*': '/app/*',
       // For test config
       'frontend/dist/prod/*': '/base/frontend/dist/prod/*',
+      'ng2-cable/js/index': 'node_modules/ng2-cable/js/index.js',
+      'actioncable': 'node_modules/actioncable/lib/assets/compiled/action_cable.js',
+      'angular2-infinite-scroll': 'node_modules/angular2-infinite-scroll/angular2-infinite-scroll.js',
       '*': 'node_modules/*'
     },
     packages: {

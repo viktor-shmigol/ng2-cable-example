@@ -1,1 +1,47 @@
-<h3>Ng2-cable example</h3>
+<div class="container">
+  <div class="col-md-12">
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">Chat</h3>
+      </div>
+      <div id="demo-chat-body" class="collapse in">
+        <div class="nano has-scrollbar">
+          <div #scrollContainer infinite-scroll [infiniteScrollDistance]="2" [infiniteScrollUpDistance]="1.5" [infiniteScrollThrottle]="500" (scrolledUp)="nextPage()" [scrollWindow]="false" class="nano-content pad-all" tabindex="0">
+            <ul class="list-unstyled media-block">
+              <li class="mar-btm" *ngFor="let message of messages">
+                <div class="media-left" [ngClass]="{'media-left': message.sender != currentSender, 'media-right': message.sender == currentSender}">
+                  <img [src]="message.sender == currentSender ? 'assets/img/avatar2.png': 'assets/img/avatar1.png'" class="img-circle img-sm" alt="Profile Picture">
+                </div>
+                <div class="media-body pad-hor" [ngClass]="{'speech-right': message.sender == currentSender}">
+                  <div class="speech">
+                    <a href="#" class="media-heading">{{message.sender}}</a>
+                    <p>{{message.body}}</p>
+                    <p class="speech-time">
+                      <i class="fa fa-clock-o fa-fw"></i>
+                      {{message.created_at | date: 'shortTime'}}
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="nano-pane">
+            <div class="nano-slider"></div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <form>
+              <div class="col-xs-9">
+                <input [(ngModel)]="message.body" type="text" placeholder="Enter your text" class="form-control chat-input" name="body">
+              </div>
+              <div class="col-xs-3">
+                <button (click)="createMessage()" [disabled]="currentSender && !message.body" class="btn btn-primary btn-block" type="submit">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class V1::MessagesController < V1::BaseController
   expose :message
-  expose :messages, -> { Message.order(:created_at) }
+  expose :messages, -> { Message.order(created_at: :desc).page(params[:page]).per(15) }
 
   def index
     render_api(messages)
