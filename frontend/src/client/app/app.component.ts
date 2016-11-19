@@ -11,6 +11,6 @@ import './operators';
 export class AppComponent {
   constructor(private ng2cable: Ng2Cable,
             private broadcaster: Broadcaster) {
-    this.ng2cable.subscribe('/cable', 'ChatChannel');
+    this.ng2cable.subscribe('/cable', 'ChatChannel'); // for development need to change url to http://localhost:3000/cable
   }
 }
