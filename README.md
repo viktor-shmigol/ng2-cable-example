@@ -1,7 +1,7 @@
 Ng2-cable-example
 -
 
-API ng2-cable: [https://github.com/victir/ng2-cable](https://github.com/victir/ng2-cable)
+API ng2-cable: [https://github.com/viktor-shmigol/ng2-cable](https://github.com/viktor-shmigol/ng2-cable)
 
 Setup
 -
@@ -21,4 +21,4 @@ Demo
 Team
 -
 
-[![](https://avatars2.githubusercontent.com/u/8638674?v=3&s=72)](https://github.com/victir)
+[![](https://avatars2.githubusercontent.com/u/8638674?v=3&s=72)](https://github.com/viktor-shmigol)
